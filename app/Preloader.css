@@ -1,0 +1,461 @@
+/* Artistic Preloader Design */
+.wrapper {
+  width: auto;
+  height: auto;
+}
+
+/* Modern Sacred Geometry Animation */
+.geometry-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.geometry {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(251, 145, 25, 0.2);
+  border-radius: 50%;
+  animation: rotate var(--rotation-duration) linear infinite;
+}
+
+.geometry::before, .geometry::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fb9119;
+  filter: blur(4px);
+}
+
+.geometry::before {
+  top: -5px;
+  left: calc(50% - 5px);
+  box-shadow: 0 0 15px 2px rgba(251, 145, 25, 0.8);
+}
+
+.geometry::after {
+  bottom: -5px;
+  left: calc(50% - 5px);
+  box-shadow: 0 0 15px 2px rgba(251, 145, 25, 0.8);
+}
+
+.geometry-1 {
+  --rotation-duration: 20s;
+}
+
+.geometry-2 {
+  --rotation-duration: 25s;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
+.geometry-3 {
+  --rotation-duration: 30s;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  transform: rotate(90deg);
+}
+
+.geometry-triangles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  opacity: 0.1;
+  background: linear-gradient(45deg, #fb9119, transparent);
+  animation: pulse-geometry 3s ease-in-out infinite alternate;
+}
+
+.triangle-1 {
+  transform: rotate(0deg);
+}
+
+.triangle-2 {
+  transform: rotate(120deg);
+}
+
+.triangle-3 {
+  transform: rotate(240deg);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-geometry {
+  0%, 100% {
+    opacity: 0.05;
+    filter: blur(3px);
+  }
+  50% {
+    opacity: 0.15;
+    filter: blur(6px);
+  }
+}
+
+/* Floating particles */
+.particles-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #fb9119;
+  opacity: 0.6;
+  filter: blur(1px);
+  box-shadow: 0 0 10px rgba(251, 145, 25, 0.5);
+  animation: float ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(var(--x-end), var(--y-end)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+/* Typewriter cursor effect with improved aesthetics */
+.text-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: linear-gradient(to bottom, #fb9119, #ffcd34);
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  box-shadow: 0 0 8px rgba(251, 145, 25, 0.3);
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Loading indicator animation */
+.loading-bar {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+}
+
+.loading-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  width: 75px;
+  transform: translateX(-100%);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Radial pulse effect */
+.pulse-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #fb9119;
+  opacity: 0;
+  animation: pulse-animation 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.pulse-ring:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.pulse-ring:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Code symbols animation */
+.code-symbol {
+  position: absolute;
+  opacity: 0;
+  color: #fb9119;
+  animation: fade-zoom 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(251, 145, 25, 0.3));
+}
+
+@keyframes fade-zoom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+  }
+  30%, 70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.3) rotate(var(--rotation));
+  }
+}
+
+/* Enhanced background effect */
+.artistic-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, 
+                 transparent 50%, rgba(255, 255, 255, 0.02) 50%, 
+                 rgba(255, 255, 255, 0.02) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  z-index: 0;
+  animation: move-bg 30s linear infinite;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 500px 500px;
+  }
+}
+
+/* Logo glitch effect */
+.glitch-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+
+.glitch-effect::before {
+  left: 2px;
+  text-shadow: -1px 0 rgba(0, 255, 255, 0.5);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  animation: glitch-effect 3s infinite linear alternate-reverse;
+}
+
+.glitch-effect::after {
+  left: -2px;
+  text-shadow: 2px 0 rgba(255, 0, 255, 0.5);
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  animation: glitch-effect 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-effect {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Additional particle shapes and effects */
+.triangle-particle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 6px 10px 6px;
+  border-color: transparent transparent #fb9119 transparent;
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+.square-particle {
+  width: 8px;
+  height: 8px;
+  background: #fb9119;
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+.star-particle {
+  width: 12px;
+  height: 12px;
+  background: #fb9119;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.4;
+  filter: blur(0.5px);
+}
+
+.diamond-particle {
+  width: 8px;
+  height: 8px;
+  background: #fb9119;
+  transform: rotate(45deg);
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+.plus-particle {
+  position: relative;
+  width: 8px;
+  height: 2px;
+  background: #fb9119;
+  opacity: 0.4;
+  filter: blur(0.5px);
+}
+
+.plus-particle::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  background: #fb9119;
+  top: -3px;
+  left: 3px;
+}
+
+/* Binary code background effect */
+.binary-text {
+  font-family: monospace;
+  font-size: 10px;
+  white-space: nowrap;
+  color: rgba(18, 18, 18, 0.2);
+  text-shadow: 0 0 1px rgba(251, 145, 25, 0.3);
+}
+
+/* Enhanced symbol appearance */
+.web-symbol {
+  filter: drop-shadow(0 0 8px rgba(251, 145, 25, 0.4));
+  transform-origin: center center;
+}
+
+/* Grid background pattern */
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+}
+
+/* Enhanced layers and depth effects */
+.depth-layer-1 {
+  z-index: 1;
+  filter: blur(0);
+}
+
+.depth-layer-2 {
+  z-index: 2;
+  filter: blur(0.5px);
+}
+
+.depth-layer-3 {
+  z-index: 3;
+  filter: blur(1px);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .geometry-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .pulse-ring {
+    border-width: 1px;
+  }
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .geometry, .particle, .text-cursor, 
+  .loading-fill::after, .pulse-ring, 
+  .code-symbol, .artistic-bg, 
+  .glitch-effect::before, .glitch-effect::after {
+    animation: none;
+  }
+}
