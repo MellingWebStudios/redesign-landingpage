@@ -21,7 +21,7 @@ export default function ServicesPage() {
             <h1 className="text-center mb-6">Our Services</h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-center text-muted-foreground text-xl max-w-3xl mx-auto">
+            <p className="text-left text-muted-foreground text-xl max-w-3xl mx-auto">
               We offer a comprehensive range of web development services to help your business thrive online.
             </p>
           </Reveal>

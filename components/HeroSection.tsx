@@ -93,7 +93,7 @@ export default function HeroSection() {
 
           <Reveal delay={0.2}>
             <div className="w-full text-center md:text-left">
-              <div className="flex flex-col md:flex-row gap-4 items-center md:items-start">
+              <div className="flex flex-col md:flex-row gap-1 items-center md:items-start">
                 <Link href="/free-redesign">
                   <motion.div
                     whileHover={{ scale: 1.02, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" }}
@@ -122,7 +122,7 @@ export default function HeroSection() {
           <Reveal delay={0.3}>
             <div className="w-full text-center md:text-left">
               <motion.div 
-                className="mt-6 md:mt-4 flex flex-col items-center md:flex-row md:items-center md:justify-start gap-1.5 text-sm text-muted-foreground mx-auto md:mx-0"
+                className="mt-6 md:mt-4 flex flex-col items-center md:flex-row md:items-center md:justify-start gap-1 text-sm text-muted-foreground mx-auto md:mx-0"
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >

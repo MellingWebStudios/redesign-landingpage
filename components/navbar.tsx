@@ -205,15 +205,21 @@ export default function Navbar() {
 
 	return (
 		<header
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out backdrop-blur-md ${
-				isScrolled || isMenuOpen ? "bg-background/90 shadow-sm" : "bg-transparent"
-			}`}
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out backdrop-blur-md ${isScrolled || isMenuOpen ? "bg-background/90 shadow-sm" : "bg-transparent"
+				}`}
 		>
 			<div className="container-wide flex h-16 items-center justify-between">
-				<Link href="/" className="text-xl font-bold tracking-tight flex items-center z-50">
+				<Link
+					href="/"
+					className="text-xl font-bold tracking-tight flex items-center z-50"
+				>
+					<span className="text-black text-2xl">{'{'}</span>
 					<span className="text-primary">Melling</span>
 					<span>WebStudios</span>
+					<span className="text-black text-2xl">{'}'}</span>
 				</Link>
+
+
 
 				{/* Desktop Navigation */}
 				<nav className="hidden md:flex items-center space-x-8">
@@ -221,9 +227,8 @@ export default function Navbar() {
 						<Link
 							key={link.name}
 							href={link.href}
-							className={`text-sm font-medium transition-colors hover:text-primary ${
-								pathname === link.href ? "text-primary" : ""
-							}`}
+							className={`text-sm font-medium transition-colors hover:text-primary ${pathname === link.href ? "text-primary" : ""
+								}`}
 						>
 							{link.name}
 						</Link>
@@ -301,16 +306,14 @@ export default function Navbar() {
 										>
 											<Link
 												href={link.href}
-												className={`flex items-center justify-between py-3 text-lg font-medium transition-colors hover:text-primary ${
-													pathname === link.href ? "text-primary border-l-4 border-primary pl-4" : "pl-5"
-												}`}
+												className={`flex items-center justify-between py-3 text-lg font-medium transition-colors hover:text-primary ${pathname === link.href ? "text-primary border-l-4 border-primary pl-4" : "pl-5"
+													}`}
 												onClick={() => setIsMenuOpen(false)}
 											>
 												<span>{link.name}</span>
 												<ChevronRight
-													className={`h-5 w-5 transition-transform ${
-														pathname === link.href ? "text-primary" : "text-muted-foreground"
-													}`}
+													className={`h-5 w-5 transition-transform ${pathname === link.href ? "text-primary" : "text-muted-foreground"
+														}`}
 												/>
 											</Link>
 											<div className="h-px bg-border w-full"></div>

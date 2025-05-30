@@ -355,13 +355,19 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <Link href="/contact">
-              <Button className="btn btn-lg bg-white text-primary hover:bg-white/90">
-                Get in Touch
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <div className="w-full flex justify-center items-center">
+              <Link href="/contact" className="inline-block">
+                <Button
+                  className="btn btn-lg bg-white text-primary hover:bg-white/90"
+                  style={{ minWidth: "auto", width: "auto", margin: 0 }}
+                >
+                  Get in Touch
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
           </Reveal>
+
         </div>
       </section>
     </>
