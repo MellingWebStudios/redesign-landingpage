@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button"
 import Reveal from "@/components/reveal-animation"
 
 export const metadata: Metadata = {
-  title: "Services | Melling WebStudios",
+  title: "Services | Melling Web Studios LTD",
   description:
-    "Premium web development services including custom websites, web applications, and UX design for small businesses.",
+    "High-performance, SEO-optimized web design, hosting, and AI-powered landing pages for UK small businesses. Get a free website redesign and ongoing support from a results-driven team.",
 }
 
 export default function ServicesPage() {
@@ -18,118 +18,62 @@ export default function ServicesPage() {
       <section className="pt-32 pb-20 bg-background">
         <div className="container-wide">
           <Reveal>
-            <h1 className="text-center mb-6">Our Services</h1>
+            <h1 className="text-center mb-6">What We Do</h1>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-left text-muted-foreground text-xl max-w-3xl mx-auto">
-              We offer a comprehensive range of web development services to help your business thrive online.
+              Melling Web Studios delivers modern, ultra-fast websites and ongoing support designed to get UK small businesses noticed and turning traffic into paying customers. <br /><br />
+              We build, launch, and host your site—then keep it optimised and growing with ongoing updates, analytics, and technical SEO.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Custom Websites */}
-      <section id="custom-websites" className="py-20 bg-background">
+      {/* Website Redesign & Builds */}
+      <section id="websites" className="py-20 bg-background">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal>
-              <div>
-                <span className="text-primary font-medium mb-2 block">01</span>
-                <h2 className="mb-4">Custom Websites</h2>
-                <p className="mb-6">
-                  We build bespoke, high-performance websites that are tailored to your business needs. Using React and
-                  Next.js, we create lightning-fast experiences that convert visitors into customers.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Blazing-fast load times with Next.js App Router</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Responsive design that works on all devices</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>SEO-optimized structure and content</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Conversion-focused user experience</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Content management system integration</span>
-                  </li>
-                </ul>
-                <Link href="/contact">
-                  <Button className="btn btn-primary">
-                    Discuss Your Project
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </Reveal>
             <Reveal delay={0.2}>
               <Image
-                src="/placeholder.svg?height=600&width=800&query=responsive website design on multiple devices"
-                alt="Custom website development"
+                src="/service01.png"
+                alt="Modern responsive web design preview"
                 width={800}
                 height={600}
                 className="rounded-lg shadow-lg"
               />
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Web Applications */}
-      <section id="web-applications" className="py-20 bg-bg-light">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal delay={0.2} className="order-2 md:order-1">
-              <Image
-                src="/placeholder.svg?height=600&width=800&query=complex web application dashboard"
-                alt="Web application development"
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg"
-              />
-            </Reveal>
-            <Reveal className="order-1 md:order-2">
+            <Reveal className="md:order-2">
               <div>
-                <span className="text-primary font-medium mb-2 block">02</span>
-                <h2 className="mb-4">Web Applications</h2>
+                <span className="text-primary font-medium mb-2 block">01</span>
+                <h2 className="mb-4">Website Redesign & Builds</h2>
                 <p className="mb-6">
-                  We develop complex, interactive web applications with seamless user experiences and robust backend
-                  integrations. From dashboards to e-commerce platforms, we build solutions that scale with your
-                  business.
+                  Get a complete website overhaul or a brand new build—using the latest Next.js, React, and AI tooling for blazing performance and unbeatable SEO.
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Full-stack development with React and Node.js</span>
+                    <span>Free, no-risk website redesigns for new clients</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Real-time data processing and visualization</span>
+                    <span>100% custom Next.js/React builds, not templates</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Secure authentication and authorization</span>
+                    <span>SEO-optimized, lightning-fast load times</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>API development and integration</span>
+                    <span>Conversion-focused design and copywriting</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Scalable architecture for growing businesses</span>
+                    <span>Mobile-first and fully responsive</span>
                   </li>
                 </ul>
-                <Link href="/contact">
+                <Link href="/free-redesign">
                   <Button className="btn btn-primary">
-                    Discuss Your Project
+                    Get Your Free Redesign
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -139,43 +83,97 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* UX Design */}
-      <section id="ux-design" className="py-20 bg-background">
+      {/* Hosting, Maintenance & Ongoing Support */}
+      <section id="hosting" className="py-20 bg-bg-light">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <Reveal className="md:order-2">
+              <Image
+                src="/service02.png"
+                alt="Website hosting and support"
+                width={800}
+                height={600}
+                className="rounded-lg shadow-lg"
+              />
+            </Reveal>
+            <Reveal>
+              <div>
+                <span className="text-primary font-medium mb-2 block">02</span>
+                <h2 className="mb-4">Hosting, Maintenance & Ongoing Support</h2>
+                <p className="mb-6">
+                  Forget about website headaches—our team keeps your site running, secure, and up-to-date with a simple, affordable monthly subscription.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                    <span>Fully managed UK cloud hosting (Vercel, Fly.io)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                    <span>24/7 uptime monitoring and backups</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                    <span>Free minor updates, changes, and support</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                    <span>Ongoing technical SEO & analytics setup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                    <span>Affordable, fixed monthly fees (£50–£200/mo)</span>
+                  </li>
+                </ul>
+                <Link href="/contact">
+                  <Button className="btn btn-primary">
+                    Start Hosting With Us
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+
+      {/* AI Landing Pages & Growth Services */}
+      <section id="ai-landing-pages" className="py-20 bg-background">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Reveal>
               <div>
                 <span className="text-primary font-medium mb-2 block">03</span>
-                <h2 className="mb-4">UX Design</h2>
+                <h2 className="mb-4">AI Landing Pages & SEO Growth</h2>
                 <p className="mb-6">
-                  We create user-centered designs that deliver intuitive, engaging experiences that guide users toward
-                  conversion. Our design process is focused on understanding your users and business goals.
+                  Tap into next-gen lead generation with AI-powered landing pages and location-based SEO to boost your business where it matters most.
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>User research and persona development</span>
+                    <span>AI-generated landing pages tailored for your business</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Wireframing and prototyping</span>
+                    <span>Dynamic location/service pages for top Google rankings</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Usability testing and iteration</span>
+                    <span>Google Analytics & conversion tracking built-in</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Conversion rate optimization</span>
+                    <span>Ongoing content and technical SEO updates</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Accessibility compliance (WCAG)</span>
+                    <span>Lead magnets, reviews, and reputation tools</span>
                   </li>
                 </ul>
                 <Link href="/contact">
                   <Button className="btn btn-primary">
-                    Discuss Your Project
+                    Boost My Leads
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -183,8 +181,8 @@ export default function ServicesPage() {
             </Reveal>
             <Reveal delay={0.2}>
               <Image
-                src="/placeholder.svg?height=600&width=800&query=ux design wireframes and prototypes"
-                alt="UX design process"
+                src="/service03.png"
+                alt="AI landing pages and SEO growth"
                 width={800}
                 height={600}
                 className="rounded-lg shadow-lg"
@@ -198,11 +196,11 @@ export default function ServicesPage() {
       <section className="py-20 bg-primary text-white">
         <div className="container-wide text-center">
           <Reveal>
-            <h2 className="mb-6">Ready to start your project?</h2>
+            <h2 className="mb-6">Ready to grow your business online?</h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
-              Let's discuss how we can help you achieve your business goals with our expert web development services.
+              Get in touch for a free website audit or to claim your no-risk redesign. We handle the tech—so you can focus on your business.
             </p>
           </Reveal>
           <Reveal delay={0.2}>

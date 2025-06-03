@@ -15,39 +15,40 @@ interface CaseStudyPageProps {
 
 // This would typically come from a CMS or database
 const caseStudies = {
-  "bitpay-redesign": {
-    title: "BitPay Website Redesign",
+  "birmingham-boiler-repairs": {
+    title: "Birmingham Boiler Repairs – High-Performance Redesign",
     description:
-      "A complete overhaul of BitPay's website to improve performance, user experience, and conversion rates.",
-    client: "BitPay",
-    industry: "Cryptocurrency Payment Processing",
-    services: ["Website Redesign", "UX Design", "Performance Optimization"],
+      "Modern, SEO-first website redesign for Birmingham's leading boiler repair specialists. Built to drive more calls and bookings with blazing-fast load speeds and easy navigation.",
+    client: "Birmingham Boiler Repairs",
+    industry: "Plumbing & Heating Services",
+    services: ["Website Redesign", "SEO Optimization", "Local Landing Pages", "Lead Generation"],
     challenge:
-      "BitPay's existing website was slow, outdated, and not optimized for mobile devices. The conversion rate was below industry standards, and the user experience was confusing for new visitors.",
+      "The original site was slow, dated, and buried on Google. Leads were dropping, and mobile users were bouncing before the page loaded.",
     solution:
-      "We rebuilt their website from the ground up using Next.js App Router and React, focusing on lightning-fast performance, intuitive navigation, and clear calls-to-action. The new design emphasizes BitPay's value proposition and makes it easy for visitors to understand their services.",
+      "We rebuilt the site with Next.js and Tailwind, structured for local SEO, and designed with clear CTAs. Integrated dynamic reviews, sticky call buttons, and a scalable architecture for new services/locations.",
     results: [
-      "43% faster load times",
-      "27% increase in conversion rate",
-      "35% increase in mobile engagement",
-      "52% reduction in bounce rate",
-      "18% increase in average session duration",
+      "PageSpeed 99+ (mobile & desktop)",
+      "1st leads within 7 days",
+      "3x increase in monthly calls",
+      "Indexed for 12+ high-value keywords",
+      "Major ranking climb within 2 weeks"
     ],
     testimonial: {
       quote:
-        "Melling WebStudios transformed our outdated website into a lightning-fast platform that's driving real business results. Our conversion rate has increased by 35% since launch.",
-      author: "Sarah Johnson",
-      position: "Marketing Director",
-      company: "BitPay",
+        "Ashley and the team delivered exactly what we needed—a site that loads instantly and brings in real customers. Our bookings are up and we're ranking higher than ever.",
+      author: "Dave",
+      position: "Owner",
+      company: "Birmingham Boiler Repairs"
     },
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    imageUrl: "/placeholder.svg?height=800&width=1200&query=cryptocurrency payment website homepage",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Vercel", "shadcn/ui"],
+    imageUrl: "bbr-website.png",
     galleryImages: [
-      "/placeholder.svg?height=600&width=800&query=cryptocurrency payment mobile website",
-      "/placeholder.svg?height=600&width=800&query=cryptocurrency payment website features page",
-      "/placeholder.svg?height=600&width=800&query=cryptocurrency payment website pricing page",
-    ],
+      "bbr-website.png",
+      "bbr-website.png",
+      "bbr-website.png"
+    ]
   },
+  // Add more as you launch new work!
 }
 
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {

@@ -33,8 +33,7 @@ export default function Home() {
             <div className="text-left max-w-2xl mb-16">
               <h2 className="mb-4">Our Services</h2>
               <p className="text-muted-foreground text-lg">
-                We specialize in creating high-performance web experiences that
-                drive business growth.
+                Everything you need to grow online—fast, modern websites, AI-powered landing pages, and ongoing support. No templates. No jargon. Just real results for UK small businesses.
               </p>
             </div>
           </Reveal>
@@ -42,31 +41,32 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Reveal delay={0.1}>
               <ServiceCard
-                title="Custom Websites"
-                description="Bespoke, high-performance websites built with React and Next.js that load in milliseconds and convert visitors."
-                icon={Layout}
-                href="/services#custom-websites"
+                title="Free Website Redesign"
+                description="Get a no-risk, free redesign of your existing website. Modern, ultra-fast, and fully custom—engineered with Next.js, React, and best-in-class SEO."
+                icon={Layout} // swap this for your own icon if you like
+                href="/free-redesign"
               />
             </Reveal>
             <Reveal delay={0.2}>
               <ServiceCard
-                title="Web Applications"
-                description="Complex, interactive web applications with seamless user experiences and robust backend integrations."
-                icon={Code}
-                href="/services#web-applications"
+                title="Managed Hosting & Support"
+                description="We handle everything—secure UK cloud hosting, backups, tech updates, and support. Enjoy peace of mind and more time to run your business."
+                icon={Code} // swap this for your own icon if you like
+                href="/services#hosting"
               />
             </Reveal>
             <Reveal delay={0.3}>
               <ServiceCard
-                title="UX Design"
-                description="User-centered design that creates intuitive, engaging experiences that guide users toward conversion."
-                icon={Palette}
-                href="/services#ux-design"
+                title="AI Landing Pages & SEO Growth"
+                description="Drive more leads with AI-powered landing pages, dynamic location/service SEO, and integrated analytics. Proven strategies for local visibility."
+                icon={Palette} // swap this for your own icon if you like
+                href="/services#ai-landing-pages"
               />
             </Reveal>
           </div>
         </div>
       </section>
+
 
       {/* Featured Project */}
       <section className="py-24 bg-bg-light">
@@ -75,8 +75,8 @@ export default function Home() {
             <Reveal>
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/placeholder.svg?key=148gi"
-                  alt="Featured project screenshot"
+                  src="bbr-website.png"
+                  alt="Birmingham Boiler Repairs website screenshot"
                   width={800}
                   height={600}
                   className="w-full h-auto"
@@ -88,13 +88,11 @@ export default function Home() {
                 <span className="text-primary font-medium mb-2 block">
                   Featured Project
                 </span>
-                <h2 className="mb-4">BitPay Redesign</h2>
+                <h2 className="mb-4">Birmingham Boiler Repairs</h2>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mb-6">
-                  BitPay needed a lightning-fast, conversion-focused website
-                  that would showcase their cryptocurrency payment solutions
-                  while providing a seamless user experience.
+                  We helped Birmingham Boiler Repairs escape an overpriced, underperforming Yell website with a lightning-fast, Google-optimized rebuild—turning their online presence into a real source of leads and local credibility.
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
@@ -106,8 +104,7 @@ export default function Home() {
                     <div>
                       <h4 className="font-bold mb-1">Challenge</h4>
                       <p className="text-muted-foreground">
-                        Slow page loads and poor mobile experience were hurting
-                        conversion rates.
+                        Poor Google rankings, slow load times, and weak design were costing them customers—and monthly Yell fees were adding up.
                       </p>
                     </div>
                   </div>
@@ -118,8 +115,7 @@ export default function Home() {
                     <div>
                       <h4 className="font-bold mb-1">Solution</h4>
                       <p className="text-muted-foreground">
-                        Next.js App Router with optimized assets and responsive
-                        design.
+                        A modern Next.js site with location-based SEO, fast hosting, and built-in reviews—plus a live dashboard to track growth.
                       </p>
                     </div>
                   </div>
@@ -130,15 +126,14 @@ export default function Home() {
                     <div>
                       <h4 className="font-bold mb-1">Results</h4>
                       <p className="text-muted-foreground">
-                        43% faster load times and 27% increase in conversion
-                        rate.
+                        Indexed and ranking within days, new local leads, and a professional web presence their customers trust—all for a fixed, affordable monthly fee.
                       </p>
                     </div>
                   </div>
                 </div>
               </Reveal>
               <Reveal delay={0.3}>
-                <Link href="/work/bitpay-redesign">
+                <Link href="/work/birmingham-boiler-repairs">
                   <Button className="btn btn-primary">
                     View Full Case Study
                     <ChevronRight className="ml-2 h-4 w-4" />
@@ -150,6 +145,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Free Redesign Banner */}
       <section className="py-24 bg-background">
         <div className="container-wide">
@@ -160,70 +156,47 @@ export default function Home() {
                   <span className="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
                     Limited Time Offer
                   </span>
-                  <h2 className="mb-4">Free Website Redesign Consultation</h2>
+                  <h2 className="mb-4">Free Website Redesign Audit</h2>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="mb-6">
-                    Let us show you how we can transform your current website
-                    into a high-converting, lightning-fast experience that will
-                    grow your business.
+                    See exactly how your website stacks up and what’s holding you back online—then get a no-risk redesign plan from the experts at Melling Web Studios.
                   </p>
                 </Reveal>
                 <Reveal delay={0.2}>
                   <ul className="space-y-3 mb-8">
                     <li className="flex items-center">
                       <div className="bg-primary/20 p-1 rounded-full mr-3">
-                        <svg
-                          className="h-4 w-4 text-primary"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
+                        {/* Checkmark */}
+                        <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span>No obligation consultation</span>
+                      <span>No-pressure, expert video or written audit</span>
                     </li>
                     <li className="flex items-center">
                       <div className="bg-primary/20 p-1 rounded-full mr-3">
-                        <svg
-                          className="h-4 w-4 text-primary"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
+                        <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span>Actionable recommendations you can implement</span>
+                      <span>Clear, actionable fixes for speed, SEO & design</span>
                     </li>
                     <li className="flex items-center">
                       <div className="bg-primary/20 p-1 rounded-full mr-3">
-                        <svg
-                          className="h-4 w-4 text-primary"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
+                        <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span>Performance and conversion analysis</span>
+                      <span>Side-by-side “before and after” comparison preview</span>
+                    </li>
+                    <li className="flex items-center">
+                      <div className="bg-primary/20 p-1 rounded-full mr-3">
+                        <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span>Zero obligation—keep the recommendations, even if you don’t hire us</span>
                     </li>
                   </ul>
                 </Reveal>
@@ -236,20 +209,22 @@ export default function Home() {
                   </Link>
                 </Reveal>
               </div>
-              <Reveal delay={0.2}>
-                <div className="h-[400px]">
-                  <CompareImage
-                    beforeImage="/placeholder.svg?key=c02hh"
-                    afterImage="/placeholder.svg?key=7jqqa"
-                    beforeAlt="Before redesign"
-                    afterAlt="After redesign"
-                  />
-                </div>
-              </Reveal>
+              <Reveal>
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="service01.png"
+                  alt="Birmingham Boiler Repairs website screenshot"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+              </div>
+            </Reveal>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Testimonials */}
       <section className="py-16 md:py-24 bg-background text-foreground">
