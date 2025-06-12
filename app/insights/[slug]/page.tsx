@@ -262,12 +262,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* CTA */}
       <section className="py-20 bg-primary text-white">
-        <div className="container-wide text-center">
+        <div className="container-wide flex flex-col items-center justify-center text-center">
           <Reveal>
             <h2 className="mb-6">Ready to improve your website?</h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
+            <p className="text-white/80 max-w-2xl mb-8 text-lg">
               Let's discuss how we can help you implement these strategies to achieve better performance and higher
               conversion rates.
             </p>

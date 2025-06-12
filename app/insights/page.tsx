@@ -137,7 +137,7 @@ export default function InsightsPage() {
       {/* Newsletter */}
       <section className="py-20 bg-primary text-white">
         <div className="container-wide">
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
             <Reveal>
               <h2 className="mb-6">Subscribe to Our Newsletter</h2>
             </Reveal>
@@ -147,11 +147,11 @@ export default function InsightsPage() {
               </p>
             </Reveal>
             <Reveal delay={0.2}>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="px-4 py-3 rounded-md flex-grow text-fg-dark focus:outline-none focus:ring-2 focus:ring-white"
+                  className="px-4 py-3 rounded-md text-fg-dark focus:outline-none focus:ring-2 focus:ring-white flex-1"
                 />
                 <Button className="bg-white text-primary hover:bg-white/90 whitespace-nowrap">Subscribe</Button>
               </div>

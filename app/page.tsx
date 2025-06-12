@@ -27,43 +27,176 @@ export default function Home() {
       {/* Logos Bar */}
 
       {/* Services Snapshot */}
-      <section className="py-12 bg-background border-y border-border">
-        <div className="container-wide">
+      <section className="py-20 bg-gray-50 relative overflow-hidden w-full">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(247,147,26,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(247,147,26,0.03),transparent_50%)]"></div>
+
+        <div className="w-full max-w-7xl mx-auto px-4 relative z-10 flex flex-col items-center">
           <Reveal>
-            <div className="text-left max-w-2xl mb-16">
-              <h2 className="mb-4">Our Services</h2>
-              <p className="text-muted-foreground text-lg">
-                Everything you need to grow online—fast, modern websites, AI-powered landing pages, and ongoing support. No templates. No jargon. Just real results for UK small businesses.
+            <div className="flex flex-col items-center justify-center text-center max-w-4xl w-full mx-auto mb-20">
+              <span className="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold mb-6 tracking-wide uppercase">
+                Our Expertise
+              </span>
+              <h2 className="mb-6 text-gray-900 font-bold text-4xl md:text-5xl">
+                Everything You Need to Dominate Online
+              </h2>
+              <p className="text-gray-600 text-xl leading-relaxed max-w-3xl w-full mx-auto">
+                From lightning-fast websites to AI-powered growth strategies—we deliver the complete digital transformation your business deserves.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 w-full max-w-6xl mx-auto">
             <Reveal delay={0.1}>
-              <ServiceCard
-                title="Free Website Redesign"
-                description="Get a no-risk, free redesign of your existing website. Modern, ultra-fast, and fully custom—engineered with Next.js, React, and best-in-class SEO."
-                icon={Layout} // swap this for your own icon if you like
-                href="/free-redesign"
-              />
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 to-orange-100/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-orange-500/10 group-hover:-translate-y-2 group-hover:border-orange-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-orange-100 rounded-xl group-hover:bg-orange-200 transition-colors duration-300">
+                      <Layout className="h-7 w-7 text-orange-600" />
+                    </div>
+                    <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">FREE</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-orange-600 transition-colors duration-300">
+                    Free Website Redesign
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Get a no-risk, free redesign of your existing website. Modern, ultra-fast, and fully custom—engineered with Next.js, React, and best-in-class SEO.
+                  </p>
+                  
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>Complete performance audit</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>Modern design concepts</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>SEO optimization strategy</span>
+                    </div>
+                  </div>
+                  
+                  <Link href="/free-redesign" className="inline-flex items-center text-orange-600 font-semibold group/link">
+                    Get Started Free
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
             </Reveal>
+
             <Reveal delay={0.2}>
-              <ServiceCard
-                title="Managed Hosting & Support"
-                description="We handle everything—secure UK cloud hosting, backups, tech updates, and support. Enjoy peace of mind and more time to run your business."
-                icon={Code} // swap this for your own icon if you like
-                href="/services#hosting"
-              />
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 to-orange-100/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-orange-500/10 group-hover:-translate-y-2 group-hover:border-orange-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-orange-100 rounded-xl group-hover:bg-orange-200 transition-colors duration-300">
+                      <Code className="h-7 w-7 text-orange-600" />
+                    </div>
+                    <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">MANAGED</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-orange-600 transition-colors duration-300">
+                    Hosting & Support
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    We handle everything—secure UK cloud hosting, backups, tech updates, and support. Enjoy peace of mind and more time to run your business.
+                  </p>
+                  
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>99.9% uptime guarantee</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>Daily automated backups</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>24/7 UK-based support</span>
+                    </div>
+                  </div>
+                  
+                  <Link href="/services#hosting" className="inline-flex items-center text-orange-600 font-semibold group/link">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
             </Reveal>
+
             <Reveal delay={0.3}>
-              <ServiceCard
-                title="AI Landing Pages & SEO Growth"
-                description="Drive more leads with AI-powered landing pages, dynamic location/service SEO, and integrated analytics. Proven strategies for local visibility."
-                icon={Palette} // swap this for your own icon if you like
-                href="/services#ai-landing-pages"
-              />
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-200/30 to-orange-100/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-orange-500/10 group-hover:-translate-y-2 group-hover:border-orange-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-orange-100 rounded-xl group-hover:bg-orange-200 transition-colors duration-300">
+                      <Palette className="h-7 w-7 text-orange-600" />
+                    </div>
+                    <span className="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">AI-POWERED</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-orange-600 transition-colors duration-300">
+                    AI Landing Pages & SEO
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Drive more leads with AI-powered landing pages, dynamic location/service SEO, and integrated analytics. Proven strategies for local visibility.
+                  </p>
+                  
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>AI-optimized content</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>Local SEO domination</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <span>Conversion tracking</span>
+                    </div>
+                  </div>
+                  
+                  <Link href="/services#ai-landing-pages" className="inline-flex items-center text-orange-600 font-semibold group/link">
+                    Explore AI Solutions
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
             </Reveal>
           </div>
+
+          {/* Bottom CTA Bar */}
+          <Reveal delay={0.4}>
+            <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
+              <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8 text-center w-full">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Ready to Transform Your Digital Presence?</h3>
+                <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                  Join 50+ UK businesses who've already revolutionized their online presence with our proven strategies.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link href="/free-redesign">
+                    <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                      Start Your Free Redesign
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/contact" className="text-orange-600 font-semibold hover:underline">
+                    Or speak with an expert →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -319,7 +452,7 @@ export default function Home() {
 
       {/* CTA Footer Strip */}
       <section className="py-20 bg-primary text-white">
-        <div className="container-wide text-center">
+        <div className="container-wide flex flex-col items-center text-center">
           <Reveal>
             <h2 className="mb-6">Ready to level-up your website?</h2>
           </Reveal>
@@ -330,7 +463,7 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="w-full flex justify-center items-center">
+            <div className="flex justify-center items-center w-full">
               <Link href="/contact" className="inline-block">
                 <Button
                   className="btn btn-lg bg-white text-primary hover:bg-white/90"
@@ -342,7 +475,6 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
-
         </div>
       </section>
     </>

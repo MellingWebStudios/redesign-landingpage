@@ -108,7 +108,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
           <Reveal>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={caseStudy.imageUrl || "/placeholder.svg"}
+                src={caseStudy.imageUrl ? (caseStudy.imageUrl.startsWith('/') ? caseStudy.imageUrl : '/' + caseStudy.imageUrl) : "/placeholder.svg"}
                 alt={caseStudy.title}
                 width={1200}
                 height={800}
@@ -198,7 +198,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
               <Reveal key={index} delay={index * 0.1}>
                 <div className="rounded-lg overflow-hidden shadow-md">
                   <Image
-                    src={image || "/placeholder.svg"}
+                    src={image ? (image.startsWith('/') ? image : '/' + image) : "/placeholder.svg"}
                     alt={`${caseStudy.title} gallery image ${index + 1}`}
                     width={800}
                     height={600}
@@ -233,7 +233,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
 
       {/* CTA */}
       <section className="py-20 bg-background">
-        <div className="container-wide text-center">
+        <div className="container-wide flex flex-col items-center text-center">
           <Reveal>
             <h2 className="text-2xl font-bold mb-6">Ready to start your project?</h2>
           </Reveal>
@@ -243,7 +243,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 w-full">
               <Link href="/contact">
                 <Button className="btn btn-primary btn-lg">Contact Us</Button>
               </Link>

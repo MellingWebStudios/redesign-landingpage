@@ -42,8 +42,8 @@ export default function ServicesPage() {
                 className="rounded-lg shadow-lg"
               />
             </Reveal>
-            <Reveal className="md:order-2">
-              <div>
+            <Reveal>
+              <div className="md:order-2">
                 <span className="text-primary font-medium mb-2 block">01</span>
                 <h2 className="mb-4">Website Redesign & Builds</h2>
                 <p className="mb-6">
@@ -87,14 +87,16 @@ export default function ServicesPage() {
       <section id="hosting" className="py-20 bg-bg-light">
         <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal className="md:order-2">
-              <Image
-                src="/service02.png"
-                alt="Website hosting and support"
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg"
-              />
+            <Reveal>
+              <div className="md:order-2">
+                <Image
+                  src="/service02.png"
+                  alt="Website hosting and support"
+                  width={800}
+                  height={600}
+                  className="rounded-lg shadow-lg"
+                />
+              </div>
             </Reveal>
             <Reveal>
               <div>
@@ -194,7 +196,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
-        <div className="container-wide text-center">
+        <div className="container-wide flex flex-col items-center text-center">
           <Reveal>
             <h2 className="mb-6">Ready to grow your business online?</h2>
           </Reveal>
@@ -204,7 +206,7 @@ export default function ServicesPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 w-full">
               <Link href="/contact">
                 <Button className="btn btn-lg bg-white text-primary hover:bg-white/90">
                   Contact Us
