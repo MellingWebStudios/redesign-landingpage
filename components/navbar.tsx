@@ -134,11 +134,12 @@ export default function Navbar() {
 			}
 
 			// Check for battery optimization
+			const connection = (navigator as any).connection
 			if (
-				navigator.connection &&
-				(navigator.connection.saveData === true ||
-					navigator.connection.effectiveType === "slow-2g" ||
-					navigator.connection.effectiveType === "2g")
+				connection &&
+				(connection.saveData === true ||
+					connection.effectiveType === "slow-2g" ||
+					connection.effectiveType === "2g")
 			) {
 				deviceInfo.batteryOptimization = true
 			}
@@ -282,7 +283,7 @@ export default function Navbar() {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.3, ease: "easeInOut" }}
-						className="md:hidden fixed inset-0 top-0 z-40 flex flex-col backdrop-blur-md mobile-menu-pattern border-t-[3px] border-primary responsive-pattern"
+						{...{ className: "md:hidden fixed inset-0 top-0 z-40 flex flex-col backdrop-blur-md mobile-menu-pattern border-t-[3px] border-primary responsive-pattern" }}
 						style={{
 							backgroundColor: "rgba(255, 255, 255, 1)",
 							height: "100vh",
@@ -326,7 +327,7 @@ export default function Navbar() {
 										initial={{ y: 20, opacity: 0 }}
 										animate={{ y: 0, opacity: 1 }}
 										transition={{ duration: 0.3, delay: 0.3 }}
-										className="mt-6"
+										{...{ className: "mt-6" }}
 									>
 										<Link href="/free-redesign" onClick={() => setIsMenuOpen(false)}>
 											<Button className="btn btn-primary w-full py-4 text-lg">Free Redesign</Button>
@@ -337,7 +338,7 @@ export default function Navbar() {
 										initial={{ y: 20, opacity: 0 }}
 										animate={{ y: 0, opacity: 1 }}
 										transition={{ duration: 0.3, delay: 0.4 }}
-										className="mt-8 flex flex-col items-center text-center"
+										{...{ className: "mt-8 flex flex-col items-center text-center" }}
 									>
 										<p className="text-muted-foreground mb-2">Need help?</p>
 										<Link href="/contact" className="text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
@@ -350,7 +351,7 @@ export default function Navbar() {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								transition={{ duration: 0.3, delay: 0.5 }}
-								className="container-wide py-4 border-t border-border mt-auto"
+								{...{ className: "container-wide py-4 border-t border-border mt-auto" }}
 							>
 								<div className="flex justify-center space-x-6">
 									<a href="#" className="text-muted-foreground hover:text-primary transition-colors">
