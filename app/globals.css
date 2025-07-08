@@ -287,4 +287,28 @@
   .text-balance {
     text-align: balance;
   }
+
+  /* Grid Pattern Background */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Custom background utilities */
+  .bg-dots-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  .bg-subtle-gradient {
+    background: linear-gradient(135deg, rgba(247, 147, 26, 0.02) 0%, rgba(59, 130, 246, 0.02) 100%);
+  }
+
+  /* Animated gradient background */
+  .animate-gradient-x {
+    background-size: 400% 400%;
+    animation: gradient-x 8s ease-in-out infinite;
+  }
 }
