@@ -1,5 +1,18 @@
 export async function GET() {
-  const robotsTxt = `User-agent: *
+  // Check if we're in production/deployed environment
+  const isProduction = 
+    process.env.NODE_ENV === 'production' || 
+    process.env.VERCEL_ENV === 'production' ||
+    process.env.FLY_APP_NAME ||  // Fly.io specific environment variable
+    process.env.FLY_REGION;      // Another Fly.io specific variable
+  
+  const robotsTxt = isProduction 
+    ? `User-agent: *
+Disallow: /
+
+# Block all indexing in production
+# This site is not ready for public indexing`
+    : `User-agent: *
 Allow: /
 
 # Sitemap
