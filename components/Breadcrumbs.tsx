@@ -55,29 +55,29 @@ export function Breadcrumbs({ service, location }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <nav className="container-wide py-4" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-        {breadcrumbItems.map((item, index) => (
-          <li key={item.href} className="flex items-center">
-            {index > 0 && (
-              <ChevronRight className="w-4 h-4 mx-2 text-muted-foreground/60" />
-            )}
-            {index === breadcrumbItems.length - 1 ? (
-              <span className="text-foreground font-medium" aria-current="page">
-                {item.name}
-              </span>
-            ) : (
-              <Link 
-                href={item.href} 
-                className="hover:text-primary transition-colors"
-              >
-                {item.name}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
+      <nav className="container-wide pt-24 pb-4" aria-label="Breadcrumb">
+        <ol className="flex items-center space-x-1 text-sm text-gray-500">
+          {breadcrumbItems.map((item, index) => (
+            <li key={item.href} className="flex items-center">
+              {index > 0 && (
+                <ChevronRight className="w-3 h-3 mx-1.5 text-gray-400" />
+              )}
+              {index === breadcrumbItems.length - 1 ? (
+                <span className="text-gray-700 font-medium" aria-current="page">
+                  {item.name}
+                </span>
+              ) : (
+                <Link 
+                  href={item.href} 
+                  className="hover:text-primary transition-colors text-gray-500"
+                >
+                  {item.name}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
     </>
   );
 }
