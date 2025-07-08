@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle, Zap, Globe, Server, LineChart, PaintBucket, ShoppingBag, Shield, Gauge, Palette, FileEdit } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Reveal from "@/components/reveal-animation"
 import { SERVICES, getServiceDisplayName, Service } from "@/lib/data"
@@ -30,126 +30,150 @@ function getServiceDescription(service: Service): string {
   return descriptions[service];
 }
 
+// Get the appropriate icon for each service
+function getServiceIcon(service: Service) {
+  const icons = {
+    "website-redesign": Globe,
+    "seo-optimisation": LineChart,
+    "conversion-boosting": Zap,
+    "local-seo": Globe,
+    "mobile-optimisation": Gauge,
+    "google-ads-landing-pages": LineChart,
+    "web-development": Globe,
+    "ecommerce-development": ShoppingBag,
+    "website-maintenance": Shield,
+    "speed-optimisation": Gauge,
+    "branding-design": Palette,
+    "content-writing": FileEdit
+  };
+  return icons[service] || CheckCircle;
+}
+
+// Get benefits for each service
+function getServiceBenefits(service: Service): Array<string> {
+  const benefits: Record<Service, Array<string>> = {
+    "website-redesign": [
+      "Modern, responsive design that builds customer trust",
+      "Fast loading speeds for better user experience",
+      "Custom design that aligns with your brand identity",
+      "Built-in SEO to help you rank higher in search results",
+      "Conversion optimization to turn visitors into customers"
+    ],
+    "seo-optimisation": [
+      "Thorough keyword research and implementation",
+      "Technical SEO to improve site structure and performance",
+      "Content optimization to attract and engage visitors",
+      "Local SEO to reach customers in your area",
+      "Regular reporting to track your progress"
+    ],
+    "conversion-boosting": [
+      "User experience improvements to increase conversions",
+      "A/B testing to determine what works best",
+      "Clear call-to-action strategies that drive results",
+      "Trust-building elements that convince visitors to take action",
+      "Continuous improvement based on real-time analytics"
+    ],
+    "local-seo": [
+      "Google My Business optimization",
+      "Local citation building and management",
+      "Location-specific keyword targeting",
+      "Review generation and management strategies",
+      "Local content strategy to boost relevance"
+    ],
+    "mobile-optimisation": [
+      "Responsive design that works on all devices",
+      "Mobile-first approach to website development",
+      "Fast loading speeds on mobile networks",
+      "Touch-friendly navigation and elements",
+      "Google mobile-friendly compliance"
+    ],
+    "google-ads-landing-pages": [
+      "Conversion-focused landing page design",
+      "Fast loading speeds to reduce bounce rates",
+      "Targeted messaging aligned with your ads",
+      "A/B testing to maximize conversion rates",
+      "Analytics integration to track performance"
+    ],
+    "web-development": [
+      "Custom development tailored to your needs",
+      "Modern frameworks like Next.js and React",
+      "Clean, maintainable code for future scalability",
+      "Integration with third-party services and APIs",
+      "Thorough testing and quality assurance"
+    ],
+    "ecommerce-development": [
+      "User-friendly product browsing and checkout",
+      "Secure payment gateway integration",
+      "Inventory and order management systems",
+      "Mobile-optimized shopping experience",
+      "Marketing and SEO features built-in"
+    ],
+    "website-maintenance": [
+      "Regular updates and security patches",
+      "Performance monitoring and optimization",
+      "Content updates and additions as needed",
+      "Technical support and troubleshooting",
+      "Regular backups and disaster recovery"
+    ],
+    "speed-optimisation": [
+      "Code optimization for faster loading",
+      "Image and asset optimization",
+      "Server and hosting optimization",
+      "Caching and performance enhancements",
+      "Regular speed tests and improvements"
+    ],
+    "branding-design": [
+      "Comprehensive brand identity development",
+      "Logo design and visual elements creation",
+      "Brand guidelines and style documentation",
+      "Consistent implementation across all touchpoints",
+      "Brand strategy aligned with your business goals"
+    ],
+    "content-writing": [
+      "SEO-optimized content that ranks in search",
+      "Engaging copy that connects with your audience",
+      "Clear, persuasive messaging that drives action",
+      "Brand voice development and consistency",
+      "Regular content updates to keep your site fresh"
+    ]
+  };
+  return benefits[service] || [];
+}
+
 export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-background">
-        <div className="container-wide">
-          <Reveal>
-            <h1 className="text-center mb-6">What We Do</h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="text-left text-muted-foreground text-xl max-w-3xl mx-auto">
-              Melling Web Studios delivers modern, ultra-fast websites and ongoing support designed to get UK small businesses noticed and turning traffic into paying customers. <br /><br />
-              We build, launch, and host your site—then keep it optimised and growing with ongoing updates, analytics, and technical SEO.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Website Redesign & Builds */}
-      <section id="websites" className="py-20 bg-background">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal delay={0.2}>
-              <Image
-                src="/service01.png"
-                alt="Modern responsive web design preview"
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg"
-              />
-            </Reveal>
+      <section className="pt-32 pb-16 bg-gradient-to-br from-background via-bg-light to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container-wide relative">
+          <div className="max-w-4xl mx-auto text-center">
             <Reveal>
-              <div className="md:order-2">
-                <span className="text-primary font-medium mb-2 block">01</span>
-                <h2 className="mb-4">Website Redesign & Builds</h2>
-                <p className="mb-6">
-                  Get a complete website overhaul or a brand new build—using the latest Next.js, React, and AI tooling for blazing performance and unbeatable SEO.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Free, no-risk website redesigns for new clients</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>100% custom Next.js/React builds, not templates</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>SEO-optimized, lightning-fast load times</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Conversion-focused design and copywriting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Mobile-first and fully responsive</span>
-                  </li>
-                </ul>
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                Expert Digital Services
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h1 className="mb-6 text-center">Our Services</h1>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">
+                Melling Web Studios delivers modern, ultra-fast websites and ongoing support designed to get UK small businesses noticed and turning traffic into paying customers. We build, launch, and host your site—then keep it optimized and growing.
+              </p>
+            </Reveal>
+            
+            <Reveal delay={0.3}>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <Link href="/free-redesign">
                   <Button className="btn btn-primary">
-                    Get Your Free Redesign
+                    Free Website Redesign
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Hosting, Maintenance & Ongoing Support */}
-      <section id="hosting" className="py-20 bg-bg-light">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal>
-              <div className="md:order-2">
-                <Image
-                  src="/service02.png"
-                  alt="Website hosting and support"
-                  width={800}
-                  height={600}
-                  className="rounded-lg shadow-lg"
-                />
-              </div>
-            </Reveal>
-            <Reveal>
-              <div>
-                <span className="text-primary font-medium mb-2 block">02</span>
-                <h2 className="mb-4">Hosting, Maintenance & Ongoing Support</h2>
-                <p className="mb-6">
-                  Forget about website headaches—our team keeps your site running, secure, and up-to-date with a simple, affordable monthly subscription.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Fully managed UK cloud hosting (Vercel, Fly.io)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>24/7 uptime monitoring and backups</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Free minor updates, changes, and support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Ongoing technical SEO & analytics setup</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Affordable, fixed monthly fees (£50–£200/mo)</span>
-                  </li>
-                </ul>
                 <Link href="/contact">
-                  <Button className="btn btn-primary">
-                    Start Hosting With Us
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline">
+                    Contact Us
                   </Button>
                 </Link>
               </div>
@@ -158,104 +182,162 @@ export default function ServicesPage() {
         </div>
       </section>
 
-
-      {/* AI Landing Pages & Growth Services */}
-      <section id="ai-landing-pages" className="py-20 bg-background">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Reveal>
-              <div>
-                <span className="text-primary font-medium mb-2 block">03</span>
-                <h2 className="mb-4">AI Landing Pages & SEO Growth</h2>
-                <p className="mb-6">
-                  Tap into next-gen lead generation with AI-powered landing pages and location-based SEO to boost your business where it matters most.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>AI-generated landing pages tailored for your business</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Dynamic location/service pages for top Google rankings</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Google Analytics & conversion tracking built-in</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Ongoing content and technical SEO updates</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
-                    <span>Lead magnets, reviews, and reputation tools</span>
-                  </li>
-                </ul>
-                <Link href="/contact">
-                  <Button className="btn btn-primary">
-                    Boost My Leads
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <Image
-                src="/service03.png"
-                alt="AI landing pages and SEO growth"
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg"
-              />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* All Services Grid */}
-      <section className="py-20 bg-background">
+      {/* Services Overview */}
+      <section className="py-16 bg-background">
         <div className="container-wide">
           <Reveal>
-            <div className="text-center mb-16">
-              <h2 className="mb-6">Our Complete Service Offering</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-                From website design to ongoing maintenance, we offer comprehensive digital solutions
+            <div className="text-center mb-12">
+              <h2 className="mb-4">Complete Digital Solutions</h2>
+              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                From website design to ongoing maintenance, we provide comprehensive digital services
                 to help your business succeed online.
               </p>
             </div>
           </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SERVICES.map((service, index) => {
-              const serviceDisplay = getServiceDisplayName(service as Service);
-              return (
-                <Reveal key={service} delay={index * 0.1}>
-                  <Link href={`/services/${service}`} className="group">
-                    <div className="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg hover:border-primary/20 transition-all duration-300 h-full">
-                      <div className="mb-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                          <CheckCircle className="w-6 h-6 text-primary" />
-                        </div>
-                        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                          {serviceDisplay}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mb-4">
-                          {getServiceDescription(service as Service)}
-                        </p>
-                      </div>
-                      <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </Link>
-                </Reveal>
-              );
-            })}
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            <Reveal delay={0.1}>
+              <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg px-4 py-6 text-center">
+                <span className="text-3xl font-bold text-primary">12+</span>
+                <p className="text-sm text-muted-foreground">Specialized Services</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg px-4 py-6 text-center">
+                <span className="text-3xl font-bold text-primary">100%</span>
+                <p className="text-sm text-muted-foreground">Custom Solutions</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg px-4 py-6 text-center">
+                <span className="text-3xl font-bold text-primary">100+</span>
+                <p className="text-sm text-muted-foreground">Projects Completed</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg px-4 py-6 text-center">
+                <span className="text-3xl font-bold text-primary">24/7</span>
+                <p className="text-sm text-muted-foreground">Support & Monitoring</p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
+
+      {/* Individual Service Sections */}
+      {SERVICES.map((service, index) => {
+        const ServiceIcon = getServiceIcon(service as Service);
+        const serviceDisplay = getServiceDisplayName(service as Service);
+        const description = getServiceDescription(service as Service);
+        const benefits = getServiceBenefits(service as Service);
+        const isEven = index % 2 === 0;
+        
+        return (
+          <section 
+            key={service}
+            id={service} 
+            className={`py-20 ${isEven ? 'bg-background' : 'bg-bg-light'}`}
+          >
+            <div className="container-wide">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                {isEven ? (
+                  <>
+                    <Reveal>
+                      <div className="relative">
+                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/5 rounded-full"></div>
+                        <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                          <Image
+                            src={`/placeholder.svg?height=600&width=800&query=${serviceDisplay} service example`}
+                            alt={serviceDisplay}
+                            width={800}
+                            height={600}
+                            className="w-full h-auto object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                      </div>
+                    </Reveal>
+                    <Reveal delay={0.2}>
+                      <div>
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <ServiceIcon className="w-6 h-6 text-primary" />
+                          </div>
+                          <div className="h-px bg-border flex-1"></div>
+                        </div>
+                        <h2 className="mb-4">{serviceDisplay}</h2>
+                        <p className="text-muted-foreground mb-6">
+                          {description}
+                        </p>
+                        <ul className="space-y-3 mb-8">
+                          {benefits.slice(0, 4).map((benefit, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link href={`/services/${service}`}>
+                          <Button className="btn btn-primary">
+                            Learn More About {serviceDisplay}
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </Reveal>
+                  </>
+                ) : (
+                  <>
+                    <Reveal>
+                      <div>
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <ServiceIcon className="w-6 h-6 text-primary" />
+                          </div>
+                          <div className="h-px bg-border flex-1"></div>
+                        </div>
+                        <h2 className="mb-4">{serviceDisplay}</h2>
+                        <p className="text-muted-foreground mb-6">
+                          {description}
+                        </p>
+                        <ul className="space-y-3 mb-8">
+                          {benefits.slice(0, 4).map((benefit, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <CheckCircle className="h-5 w-5 text-primary mr-3 mt-1" />
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link href={`/services/${service}`}>
+                          <Button className="btn btn-primary">
+                            Learn More About {serviceDisplay}
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </Reveal>
+                    <Reveal delay={0.2}>
+                      <div className="relative">
+                        <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/5 rounded-full"></div>
+                        <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                          <Image
+                            src={`/placeholder.svg?height=600&width=800&query=${serviceDisplay} service example`}
+                            alt={serviceDisplay}
+                            width={800}
+                            height={600}
+                            className="w-full h-auto object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                      </div>
+                    </Reveal>
+                  </>
+                )}
+              </div>
+            </div>
+          </section>
+        )
+      })}
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
@@ -270,18 +352,18 @@ export default function ServicesPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="flex flex-wrap justify-center gap-4 w-full">
-              <Link href="/contact">
+              <Link href="/free-redesign">
                 <Button className="btn btn-lg bg-white text-primary hover:bg-white/90">
-                  Contact Us
+                  Get Free Redesign
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/free-redesign">
+              <Link href="/contact">
                 <Button
                   variant="outline"
                   className="btn btn-lg bg-transparent border-white text-white hover:bg-white/10"
                 >
-                  Get Free Redesign
+                  Contact Us
                 </Button>
               </Link>
             </div>

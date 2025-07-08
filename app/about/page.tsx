@@ -53,9 +53,9 @@ export default function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+                <h1 className="mb-6 text-black">
                 About Melling WebStudios
-              </h1>
+                </h1>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">

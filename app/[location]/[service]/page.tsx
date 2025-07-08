@@ -66,12 +66,14 @@ export default async function LocationServicePage({ params }: LocationServicePag
       <section className="pt-32 pb-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container-wide relative">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto">
             <Reveal>
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <MapPin className="w-4 h-4" />
-                {locationDisplay} Specialists
+              <div className="flex justify-center w-full">
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <MapPin className="w-4 h-4" />
+                  {locationDisplay} Specialists
+                </div>
               </div>
             </Reveal>
             
@@ -102,10 +104,9 @@ export default async function LocationServicePage({ params }: LocationServicePag
                   </Button>
                 </Link>
               </div>
-              
               {/* Breadcrumbs */}
-              <nav className="flex justify-center mb-12" aria-label="Breadcrumb">
-                <ol className="flex items-center space-x-1 text-sm text-gray-500">
+              <nav className="mb-12" aria-label="Breadcrumb">
+                <ol className="flex justify-center items-center space-x-1 text-sm text-gray-500">
                   <li>
                     <Link href="/" className="hover:text-primary transition-colors">
                       Home
