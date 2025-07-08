@@ -4,11 +4,30 @@ import type { Metadata } from "next"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Reveal from "@/components/reveal-animation"
+import { SERVICES, getServiceDisplayName, Service } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Services | Melling Web Studios LTD",
   description:
     "High-performance, SEO-optimized web design, hosting, and AI-powered landing pages for UK small businesses. Get a free website redesign and ongoing support from a results-driven team.",
+}
+
+function getServiceDescription(service: Service): string {
+  const descriptions: Record<Service, string> = {
+    "website-redesign": "Transform your existing website with modern design and improved functionality",
+    "seo-optimisation": "Boost your search rankings and attract more organic traffic",
+    "conversion-boosting": "Optimize your website to turn more visitors into customers",
+    "local-seo": "Dominate local search results and attract nearby customers",
+    "mobile-optimisation": "Ensure perfect performance across all mobile devices",
+    "google-ads-landing-pages": "Create high-converting pages for your advertising campaigns",
+    "web-development": "Custom web development solutions tailored to your business needs",
+    "ecommerce-development": "Build powerful online stores that drive sales",
+    "website-maintenance": "Keep your website secure, updated, and performing optimally",
+    "speed-optimisation": "Make your website lightning-fast for better user experience",
+    "branding-design": "Create a cohesive brand identity that resonates with customers",
+    "content-writing": "Engaging, SEO-optimized content that converts visitors"
+  };
+  return descriptions[service];
 }
 
 export default function ServicesPage() {
@@ -190,6 +209,50 @@ export default function ServicesPage() {
                 className="rounded-lg shadow-lg"
               />
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* All Services Grid */}
+      <section className="py-20 bg-background">
+        <div className="container-wide">
+          <Reveal>
+            <div className="text-center mb-16">
+              <h2 className="mb-6">Our Complete Service Offering</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+                From website design to ongoing maintenance, we offer comprehensive digital solutions
+                to help your business succeed online.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {SERVICES.map((service, index) => {
+              const serviceDisplay = getServiceDisplayName(service as Service);
+              return (
+                <Reveal key={service} delay={index * 0.1}>
+                  <Link href={`/services/${service}`} className="group">
+                    <div className="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg hover:border-primary/20 transition-all duration-300 h-full">
+                      <div className="mb-4">
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                          <CheckCircle className="w-6 h-6 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                          {serviceDisplay}
+                        </h3>
+                        <p className="text-muted-foreground text-sm mb-4">
+                          {getServiceDescription(service as Service)}
+                        </p>
+                      </div>
+                      <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

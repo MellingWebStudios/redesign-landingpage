@@ -11,6 +11,7 @@ import CompareImage from "@/components/compare-image"
 import Reveal from "@/components/reveal-animation"
 import { Star } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
+import { DynamicPagesNavigation } from "@/components/DynamicPagesNavigation";
 
 
 export const metadata: Metadata = {
@@ -664,6 +665,8 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-200 to-transparent"></div>
       </section>
 
+      {/* Dynamic Pages Navigation */}
+      <DynamicPagesNavigation />
 
       {/* Insights Preview */}
       <section className="py-24 bg-background">
