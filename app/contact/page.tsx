@@ -70,40 +70,73 @@ export default function ContactPage() {
 
       {/* Contact Form & Info */}
       <section className="py-20 bg-background">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left Column - Contact Form */}
+        <div className="container-wide flex justify-center">
+          <div className="w-full max-w-2xl">
             <Reveal>
-              <div>
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+              <div className="bg-white/90 dark:bg-background border border-border rounded-2xl shadow-lg p-10 flex flex-col gap-6">
+                <h2 className="text-3xl font-extrabold mb-2 text-primary">Send Us a Message</h2>
+                <p className="text-muted-foreground mb-2 text-base">
+                  We'd love to hear from you! Fill out the form and our team will get back to you soon.
+                </p>
+                <div className="mb-6 flex items-center gap-2 text-base">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <span className="font-medium">Email us directly:</span>
+                  <a
+                    href="mailto:hello@mellingwebstudios.com"
+                    className="text-primary underline hover:text-primary/80"
+                  >
+                    hello@mellingwebstudios.com
+                  </a>
+                </div>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Your Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="John Doe" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address</FormLabel>
-                          <FormControl>
-                            <Input placeholder="john@example.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Your Name</FormLabel>
+                            <FormControl>
+                              <div className="relative">
+                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-primary">
+                                  <svg
+                                    width="18"
+                                    height="18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                  </svg>
+                                </span>
+                                <Input className="pl-10" placeholder="John Doe" {...field} />
+                              </div>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Email Address</FormLabel>
+                            <FormControl>
+                              <div className="relative">
+                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-primary">
+                                  <Mail className="h-4 w-4" />
+                                </span>
+                                <Input className="pl-10" placeholder="john@example.com" {...field} />
+                              </div>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
                     <FormField
                       control={form.control}
                       name="subject"
@@ -134,7 +167,11 @@ export default function ContactPage() {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="btn btn-primary w-full" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      className="btn btn-primary w-full text-lg py-6 rounded-xl"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? (
                         <span className="flex items-center">
                           <svg
@@ -170,60 +207,6 @@ export default function ContactPage() {
                 </Form>
               </div>
             </Reveal>
-
-            {/* Right Column - Contact Info & Map */}
-            <div>
-              <Reveal delay={0.2}>
-                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                <div className="space-y-6 mb-10">
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold mb-1">Email</h3>
-                      <p className="text-muted-foreground">hello@mellingwebstudios.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold mb-1">Office</h3>
-                      <p className="text-muted-foreground">
-                        123 Web Dev Lane
-                        <br />
-                        San Francisco, CA 94103
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.3}>
-                <div className="rounded-lg overflow-hidden h-[300px] border border-border">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.77791667087!2d-122.43149379509717!3d37.77492951312436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </Reveal>
-            </div>
           </div>
         </div>
       </section>
