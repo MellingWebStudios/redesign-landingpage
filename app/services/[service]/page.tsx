@@ -574,33 +574,30 @@ export default async function ServicePage({ params }: ServicePageProps) {
                       <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-6 lg:p-10 shadow-xl shadow-gray-900/8 border border-gray-200/60">
                         
                         {/* Section Number & Category Badge */}
-                        <div className="absolute -top-4 left-6 flex items-center gap-3">
-                          <div className="bg-gradient-to-r from-gray-900 to-gray-700 text-white px-5 py-2 rounded-xl font-bold text-base shadow-lg border-2 border-white">
-                            {String(index + 1).padStart(2, '0')}
-                          </div>
+                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                           <div className={`bg-gradient-to-r ${benefit.color} text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-md`}>
-                            Solution {index + 1}
+                          Solution {index + 1}
                           </div>
                         </div>
 
                         {/* Benefit Section */}
-                        <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-16 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} justify-center mt-6`}>
+                        <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} justify-center mt-6`}>
                           
                           {/* Enhanced Visual Element with Graphics */}
                           <div className="w-full lg:flex-1 flex justify-center relative">
                             
-                            {/* Background graphics for visual element */}
-                            <div className="absolute inset-0 -m-6">
-                              {/* Geometric background patterns */}
-                              <div className={`absolute top-2 right-2 w-12 h-12 bg-gradient-to-br ${benefit.color} rounded-full opacity-8 animate-pulse`} style={{animationDelay: '0s'}}></div>
-                              <div className={`absolute bottom-4 left-1 w-8 h-8 bg-gradient-to-br ${benefit.color} rounded-lg opacity-10 animate-pulse`} style={{animationDelay: '1s'}}></div>
-                              <div className={`absolute top-8 left-4 w-4 h-4 bg-gradient-to-br ${benefit.color} rounded-full opacity-12 animate-pulse`} style={{animationDelay: '2s'}}></div>
+                            {/* Background graphics for visual element - mobile responsive */}
+                            <div className="absolute inset-0 -m-3 lg:-m-6">
+                              {/* Geometric background patterns - positioned relative to card */}
+                              <div className={`absolute top-2 right-2 w-8 h-8 lg:w-12 lg:h-12 bg-gradient-to-br ${benefit.color} rounded-full opacity-20 animate-pulse`} style={{animationDelay: '0s'}}></div>
+                              <div className={`absolute bottom-4 left-1 w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-br ${benefit.color} rounded-lg opacity-25 animate-pulse`} style={{animationDelay: '1s'}}></div>
+                              <div className={`absolute top-8 left-4 w-3 h-3 lg:w-4 lg:h-4 bg-gradient-to-br ${benefit.color} rounded-full opacity-30 animate-pulse`} style={{animationDelay: '2s'}}></div>
                             </div>
 
                             <Reveal delay={0.6 + (index * 0.2)}>
-                              <div className="relative group max-w-md w-full z-10">
+                              <div className="relative group w-[340px] z-10 mx-auto">
                                 {/* Enhanced Main visual container */}
-                                <div className={`relative bg-gradient-to-br ${benefit.color} p-8 rounded-xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] border-2 border-white/40 backdrop-blur-sm h-[520px] flex flex-col`}>
+                                <div className={`relative bg-gradient-to-br ${benefit.color} p-6 lg:p-8 rounded-xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.02] border-2 border-white/40 backdrop-blur-sm h-[520px] flex flex-col w-[340px] mx-auto`}>
                                 
                                   {/* Top accent bar */}
                                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white/30 via-white/50 to-white/30 rounded-t-xl"></div>
@@ -698,11 +695,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
                           {/* Enhanced Content Section */}
                           <div className="flex-1 max-w-xl text-center lg:text-left relative">
                             
-                            {/* Content background graphics */}
-                            <div className="absolute inset-0 -m-4">
-                              <div className="absolute top-0 right-0 w-10 h-10 bg-primary/3 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                              <div className="absolute bottom-2 left-2 w-6 h-6 bg-gray-200/60 rounded-lg animate-pulse" style={{animationDelay: '2s'}}></div>
-                              <div className="absolute top-1/3 right-4 w-3 h-3 bg-primary/8 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+                            {/* Content background graphics - mobile responsive */}
+                            <div className="absolute inset-0 -m-2 lg:-m-4">
+                              <div className={`absolute top-0 right-0 w-6 h-6 lg:w-10 lg:h-10 bg-gradient-to-br ${benefit.color} rounded-full opacity-15 animate-pulse`} style={{animationDelay: '1s'}}></div>
+                              <div className={`absolute bottom-2 left-2 w-4 h-4 lg:w-6 lg:h-6 bg-gradient-to-br ${benefit.color} rounded-lg opacity-10 animate-pulse`} style={{animationDelay: '2s'}}></div>
+                              <div className={`absolute top-1/3 right-4 w-2 h-2 lg:w-3 lg:h-3 bg-gradient-to-br ${benefit.color} rounded-full opacity-20 animate-pulse`} style={{animationDelay: '3s'}}></div>
                             </div>
 
                             <Reveal delay={0.7 + (index * 0.2)}>
