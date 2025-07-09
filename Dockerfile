@@ -11,6 +11,8 @@ WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV="production"
+ENV HOSTNAME="0.0.0.0"
+ENV PORT="3000"
 
 # Install pnpm
 ARG PNPM_VERSION=10.11.0
@@ -32,7 +34,7 @@ RUN pnpm install --frozen-lockfile --prod=false
 COPY . .
 
 # Build application
-RUN npx next build --experimental-build-mode compile
+RUN pnpm build
 
 # Remove development dependencies
 RUN pnpm prune --prod
@@ -44,9 +46,13 @@ FROM base
 # Copy built application
 COPY --from=build /app /app
 
+# Make entrypoint executable
+RUN chmod +x /app/docker-entrypoint.js
+
 # Entrypoint sets up the container.
 ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
+CMD ["pnpm", "run", "start"]
 CMD [ "pnpm", "run", "start" ]
